@@ -24,8 +24,8 @@ export const query = graphql`
           author
           featuredImage {
             childImageSharp {
-              fluid {
-                  ...GatsbyImageSharpFluid
+              fluid(quality: 100) {
+                  ...GatsbyImageSharpFluid_noBase64
               }
             }
           }
