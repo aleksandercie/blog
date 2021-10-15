@@ -1,0 +1,44 @@
+@import "../../styles/main.scss";
+
+.post {
+  margin: $gap-small;
+  font-size: 16px;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include flexColumn;
+
+  @media (min-width: 560px) {
+    grid-gap: $gap-small;
+  }
+
+  &__link,
+  &__wrapper {
+    border: $border;
+  }
+
+  &__wrapper {
+    max-width: 680px;
+
+    @include flexColumn;
+  }
+
+  &__info {
+    margin: $gap-regular;
+  }
+
+  &__description {
+    font-size: 14px;
+  }
+
+  &__author {
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  &__link {
+    &--homepage {
+      margin: $gap-regular auto;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../styles/main.scss";
+
+.typography {
+  &--bold {
+    font-weight: 600;
+  }
+
+  &--grey {
+    color: $c-grey;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}

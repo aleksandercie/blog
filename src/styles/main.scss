@@ -1,0 +1,51 @@
+/* Colors 
+************************************************************** */
+
+$c-white: #fff;
+$c-black: #000;
+$c-grey: rgb(109, 109, 109);
+
+/* Borders
+************************************************************** */
+
+$border: 2px solid $c-black;
+
+/* Paddings, Margins
+************************************************************** */
+
+$gap-xxsmall: 5px;
+$gap-xsmall: 10px;
+$gap-small: 15px;
+$gap-regular: 20px;
+$gap-large: 30px;
+$gap-xlarge: 40px;
+
+/* Mixins 
+************************************************************** */
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* General styles 
+************************************************************** */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $c-black;
+  background-color: $c-white;
+}
+
+a {
+  color: $c-black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}

@@ -1,0 +1,33 @@
+@import "../../styles/main.scss";
+
+.button {
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  padding: $gap-xsmall;
+
+  &--primary {
+    margin-top: $gap-regular;
+    background-color: $c-black;
+    color: $c-white;
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      background-color: $c-grey;
+    }
+  }
+
+  &--secondary {
+    background-color: $c-white;
+    color: $c-black;
+    border: $border;
+    text-decoration: underline;
+    text-decoration-color: $c-white;
+    transition: text-decoration-color 0.5s ease;
+
+    &:hover {
+      text-decoration-color: $c-black;
+    }
+  }
+}

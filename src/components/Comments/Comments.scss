@@ -1,0 +1,36 @@
+@import "../../styles/main.scss";
+
+.comments {
+  margin: $gap-regular;
+  padding-top: $gap-regular;
+  border-top: $border;
+
+  @include flexColumn;
+
+  .comment {
+    margin: $gap-xxsmall 0;
+    text-align: center;
+  }
+
+  &__container {
+    align-items: center;
+
+    @include flexColumn;
+  }
+
+  &__input {
+    width: 80%;
+    margin-top: $gap-regular;
+
+    @include flexColumn;
+
+    input {
+      margin-top: $gap-xsmall;
+      padding: $gap-xsmall;
+    }
+  }
+
+  &__button {
+    width: 40%;
+  }
+}
