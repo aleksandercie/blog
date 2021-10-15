@@ -22,25 +22,27 @@ const Comments: FC<CommentsProps> = ({ defaultComments, id }) => {
             id: id,
             comments: [newComments],
         }
+        if (typeof window !== 'undefined') {
 
-        const setLocalStorage = (nameLocalStorage: string, commentData: AllCommentsPageTypes.AllArticleNodes): void => {
-            localStorage.setItem(nameLocalStorage, JSON.stringify(commentData));
-        } 
+            const setLocalStorage = (nameLocalStorage: string, commentData: AllCommentsPageTypes.AllArticleNodes): void => {
+                localStorage.setItem(nameLocalStorage, JSON.stringify(commentData));
+            } 
 
-        if(localStorage.getItem('commentsData')) {
-            const localData: AllCommentsPageTypes.AllArticleNodes = JSON.parse(localStorage.getItem('commentsData'));
-            const getComment = localData.filter((comment) => comment.id === id);
+            if(localStorage.getItem('commentsData')) {
+                const localData: AllCommentsPageTypes.AllArticleNodes = JSON.parse(localStorage.getItem('commentsData'));
+                const getComment = localData.filter((comment) => comment.id === id);
 
-            if(getComment[0]) {
-                getComment[0].comments.push(newComments);
-                setLocalStorage('commentsData', localData);
+                if(getComment[0]) {
+                    getComment[0].comments.push(newComments);
+                    setLocalStorage('commentsData', localData);
+                } else {
+                    localData.push(newCommentObj);
+                    setLocalStorage('commentsData', localData);
+                }
+
             } else {
-                localData.push(newCommentObj);
-                setLocalStorage('commentsData', localData);
+                setLocalStorage('commentsData', [newCommentObj]);
             }
-
-        } else {
-            setLocalStorage('commentsData', [newCommentObj]);
         }
 
         setNewComments('');

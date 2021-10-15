@@ -14,11 +14,13 @@ import './Post.scss';
 const Post: FC<PostProps> = ({ article, link}) => {
 
     let {id, slug, title, description, author, comments, featuredImage } = article;
-    
-    const localData:  AllCommentsPageTypes.AllArticleNodes = JSON.parse(localStorage.getItem('commentsData'));
 
-    if(localData){
-        localData.filter((comment) => comment.id === id && (comments = comment.comments));
+    if (typeof window !== 'undefined') {
+        const localData:  AllCommentsPageTypes.AllArticleNodes = JSON.parse(localStorage.getItem('commentsData'));
+        
+        if(localData){
+            localData.filter((comment) => comment.id === id && (comments = comment.comments));
+        }
     }
 
     const renderArticleInfo = (): JSX.Element => (
